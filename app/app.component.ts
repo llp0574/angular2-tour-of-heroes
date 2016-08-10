@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
@@ -80,7 +79,8 @@ export class AppComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   getHeroes() {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    // this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
   ngOnInit() {
